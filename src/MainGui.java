@@ -332,7 +332,7 @@ public class MainGui implements ActionListener {
         int count = 0;
         for (int i = inputField.length()-1; i > 0; i--){
             char ch = inputField.charAt(i);
-            if (!Character.isDigit(ch)){        //To prevent scenarios such as 456456.345345.345345
+            if (!Character.isDigit(ch)){        //To prevent scenarios with numbers such as 4566.345.345
                 if(inputField.charAt(i) == '.')
                     count++;
                 return count;                  //No need to check further

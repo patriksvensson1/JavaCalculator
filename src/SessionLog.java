@@ -13,7 +13,7 @@ public class SessionLog {
         DateTimeFormatter formatterDate = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         String date = currentTime.format(formatterDate);
 
-        //Pairs expression with resultPanel
+        //Pairs expression with result
         Map.Entry<String, String> expressionResultPair = Map.entry(expression, result);
 
         // Pair the previous pair with time
@@ -28,6 +28,7 @@ public class SessionLog {
     }
     public static String logGui(){
         StringBuilder returnString = new StringBuilder();
+
         for (Map.Entry<String, List<Map.Entry<String, Map.Entry<String, String>>>> entry : logMap.entrySet()) {
             String date = entry.getKey();
             List<Map.Entry<String, Map.Entry<String, String>>> entriesForDate = entry.getValue();

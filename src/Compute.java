@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Compute {
     public static String evaluate(String expression) {
-        //Stacks to hold numberButton and operators
+        //Stacks to hold operands(numbers) and operators
         Stack<Double> operands = new Stack<>();
         Stack<Character> operators = new Stack<>();
         int i = 0;
