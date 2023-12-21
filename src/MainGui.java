@@ -35,8 +35,8 @@ public class MainGui implements ActionListener {
             addInputFieldKeyListener();
         resultPanel.add(inputField);
 
-        buttonsRightPanel = new JPanel(new GridLayout(0,3,5,5));
-            buttonsRightPanel.setLayout(new GridBagLayout());
+        buttonsLeftPanel = new JPanel(new GridLayout(0,3,5,5));
+            buttonsLeftPanel.setLayout(new GridBagLayout());
         GridBagConstraints numberConstraints = new GridBagConstraints();
             numberConstraints.fill = GridBagConstraints.BOTH;
             numberConstraints.weightx = 1;
@@ -58,7 +58,7 @@ public class MainGui implements ActionListener {
             numberButton[i].setFocusable(false);
             numberButton[i].addActionListener(this);
             numberButton[i].setPreferredSize(buttonSize);
-            buttonsRightPanel.add(numberButton[i], numberConstraints);
+                buttonsLeftPanel.add(numberButton[i], numberConstraints);
 
             numberConstraints.gridx++;
             if(numberConstraints.gridx == 3){
@@ -67,9 +67,9 @@ public class MainGui implements ActionListener {
             }
         }
 
-        buttonsLeftPanel = new JPanel(new GridLayout(0,3,5,5));
-            buttonsLeftPanel.setLayout(new GridBagLayout());
-            buttonsLeftPanel.setBackground(Color.lightGray);
+        buttonsRightPanel = new JPanel(new GridLayout(0,3,5,5));
+            buttonsRightPanel.setLayout(new GridBagLayout());
+            buttonsRightPanel.setBackground(Color.lightGray);
         GridBagConstraints functionConstraints = new GridBagConstraints();
             functionConstraints.fill = GridBagConstraints.BOTH;
             functionConstraints.weightx = 1;
@@ -95,7 +95,7 @@ public class MainGui implements ActionListener {
             functionButton[i].addActionListener(this);
             functionButton[i].setFocusable(false);
             functionButton[i].setPreferredSize(buttonSize);
-            buttonsLeftPanel.add(functionButton[i], functionConstraints);
+            buttonsRightPanel.add(functionButton[i], functionConstraints);
             functionConstraints.gridx++;
             if(functionConstraints.gridx == 3){
                 functionConstraints.gridx = 0;
@@ -109,12 +109,12 @@ public class MainGui implements ActionListener {
         functionButton[10].addActionListener(this);
         functionButton[10].setFocusable(false);
         functionConstraints.gridwidth = 2;
-        buttonsLeftPanel.add(functionButton[10], functionConstraints);
+        buttonsRightPanel.add(functionButton[10], functionConstraints);
 
         buttonsPanel = new JPanel();
             buttonsPanel.setLayout(new BorderLayout());
-            buttonsPanel.add(buttonsRightPanel, BorderLayout.WEST);
-            buttonsPanel.add(buttonsLeftPanel, BorderLayout.EAST);
+            buttonsPanel.add(buttonsLeftPanel, BorderLayout.WEST);
+            buttonsPanel.add(buttonsRightPanel, BorderLayout.EAST);
 
         rootPanel.add(resultPanel, north);
         rootPanel.add(buttonsPanel, south);

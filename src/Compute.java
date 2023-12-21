@@ -68,7 +68,7 @@ public class Compute {
         double result = operands.pop();
 
         if (result % 1 == 0)
-            return String.valueOf((int)result);
+            return String.format("%.0f", result);
         else
             return String.valueOf(result);
     }
